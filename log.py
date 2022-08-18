@@ -2,12 +2,14 @@
 from datetime import datetime as  dt
 import rational_num as rat
 
-# now = datetime.datetime.now()
-def loggi(data):
-    time = dt.now().strftime('%H^%M')
+
+def loggi():
+    time = dt.now().strftime('%H%M')
+    res =rat.calk() 
     with open ('log.txt', 'a') as log:
-        log.writelines('{}; result; {}'
-                        .format(time, data))
+        log.writelines(f'{time} {res}\n')
+
+
 
 
 # def loggi_view (sensor):
