@@ -1,21 +1,21 @@
 
 from datetime import datetime as  dt
 import rational_num as rat
+import view
+
 
 
 def loggi():
-    time = dt.now().strftime('%H%M')
-    res =rat.calk() 
+    time = dt.now().strftime('%H:%M')
+    res = rat.calk()
+    view.view_data(res)
     with open ('log.txt', 'a') as log:
-        log.writelines(f'{time} {res}\n')
+        log.writelines(f'time -> {time}:result -> {res} \n')
+    # return res    
 
 
 
 
-# def loggi_view (sensor):
-#     data = rat.calk(sensor)
-#     loggi(data)
-#     return data
 
 
 

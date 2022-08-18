@@ -9,7 +9,7 @@ def button_click():
     print('2. Просмотр логирования')
     print('3. Выход из программы')
     status = False
-    while status != True:
+    while status == False:
         k = input('введите пункт меню: ')
         if  k == '1':
             value_a = view.get_value()
@@ -18,10 +18,15 @@ def button_click():
             result =  rat.calk()
             view.view_data(result)# возврат значения в view
             status = False
+            
         elif k == '2':  
+            value_a = view.get_value()
+            value_b = view.get_value()
+            rat.init(value_a, value_b)
             result = l.loggi()
             view.view_data(result)# возврат значения в view
             status = False
+            break
         elif k == '3':  
             break
         else:    
